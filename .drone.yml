@@ -6,6 +6,9 @@ steps:
   image: alpine/git
   commands:
   - git fetch --all
+  when:
+    event:
+      - pull_request
 - name: test-branch
   image: bcyangguang/tmp-drone-test
   settings:
