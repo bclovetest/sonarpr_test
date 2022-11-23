@@ -10,7 +10,6 @@ steps:
   when:
     branch:
       - main
-      - master
 
 - name: fetch
   image: alpine/git
