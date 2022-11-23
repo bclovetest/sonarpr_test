@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-    // password := "12345"
+    // password := "1234ll5"
     fmt.Println("Hello, World!")
 }
