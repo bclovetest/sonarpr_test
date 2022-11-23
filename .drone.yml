@@ -2,13 +2,6 @@ kind: pipeline
 name: sonar-test
 
 steps:
-- name: fetch
-  image: alpine/git
-  commands:
-  - git fetch --all
-  when:
-    event:
-      - pull_request
 - name: test-branch
   image: bcyangguang/tmp-drone-test
   settings:
@@ -19,6 +12,13 @@ steps:
       - main
       - master
 
+- name: fetch
+  image: alpine/git
+  commands:
+  - git fetch --all
+  when:
+    event:
+      - pull_request
 - name: test-pr
   image: bcyangguang/tmp-drone-test
   settings:
