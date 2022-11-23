@@ -19,3 +19,16 @@ steps:
   when:
     event:
       - pull_request
+
+- name: test-branch
+  image: bcyangguang/tmp-drone-test
+  settings:
+    sonar_host:  http://43.130.201.130:9000/
+    sonar_token: 734e9d36e9c123f13df0de17c3065705784d15d0
+  when:
+    branch:
+      - main
+      - master
+    event:
+      exclude:
+      - pull_request
