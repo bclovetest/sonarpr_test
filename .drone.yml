@@ -3,8 +3,9 @@ name: sonar-test
 
 clone:
   disable: true
-  when:
-    event:
+  trigger:
+    when:
+      event:
       - pull_request
 
 steps:
