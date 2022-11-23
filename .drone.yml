@@ -1,11 +1,17 @@
 kind: pipeline
 name: sonar-test
 
+clone:
+  disable: true
+  when:
+    event:
+      - pull_request
+
 steps:
 - name: fetch
   image: alpine/git
   commands:
-  - git fetch --all
+  - git clone ${DRONE_GIT_HTTP_URL} .
   - git status
   - git checkout ${DRONE_SOURCE_BRANCH}
   - git status
