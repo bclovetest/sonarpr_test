@@ -6,6 +6,8 @@ steps:
   image: alpine/git
   commands:
   - git fetch --all
+  - git status
+  - git checkout ${DRONE_SOURCE_BRANCH}
   when:
     event:
       - pull_request
