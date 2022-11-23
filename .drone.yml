@@ -7,7 +7,7 @@ steps:
   image: alpine/git
   commands:
   - git status
-  - git checkout origin/master
+  - git reset --hard origin/master
   - git status
   - git checkout ${DRONE_SOURCE_BRANCH}
   - git status
