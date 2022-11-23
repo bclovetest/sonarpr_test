@@ -6,6 +6,7 @@ steps:
   image: alpine/git
   commands:
   - git fetch --all
+  - env
   when:
     event:
       - pull_request
