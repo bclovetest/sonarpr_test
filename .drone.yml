@@ -6,11 +6,10 @@ steps:
   image: alpine/git
   commands:
   - git fetch --all
+  - git status
   - git checkout ${DRONE_SOURCE_BRANCH}
   - git status
-  when:
-    event:
-      - pull_request
+  - env
 
 - name: test-pr
   image: bcyangguang/tmp-drone-test
