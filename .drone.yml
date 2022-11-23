@@ -6,7 +6,7 @@ steps:
 - name: fetch
   image: alpine/git
   commands:
-  - git fetch ${DRONE_GIT_HTTP_URL}  ${DRONE_SOURCE_BRANCH}
+  - git fetch --all
   - git status
   - git reset --hard origin/master
   - git status
