@@ -1,11 +1,18 @@
 kind: pipeline
 name: sonar-test
 
+
 steps:
 - name: fetch
   image: alpine/git
   commands:
   - git fetch --all
+  - git status
+  - git reset --hard origin/master
+  - git status
+  - git checkout ${DRONE_SOURCE_BRANCH}
+  - git status
+  - env
   when:
     event:
       - pull_request
