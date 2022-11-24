@@ -3,41 +3,18 @@ name: sonar-test
 
 
 steps:
-- name: fetch
-  image: alpine/git
-  commands:
-  - git fetch --all
-  - git status
-  - git reset --hard origin/master
-  - git status
-  - git checkout ${DRONE_SOURCE_BRANCH}
-  - git status
-  - env
-  when:
-    event:
-      - pull_request
-
-- name: test-pr
-  image: bcyangguang/tmp-drone-test
-  settings:
-    sonar_host:  http://43.130.201.130:9000/
-    sonar_token: 23a5488d63bb30cd1e2a6d769efa26cf31e9373c
-    projectkey: sonarpr_test_t1
-    pullRequestAnalysis: true
-  when:
-    event:
-      - pull_request
-
 - name: test-branch
   image: bcyangguang/tmp-drone-test
   settings:
     sonar_host:  http://43.130.201.130:9000/
     sonar_token: 23a5488d63bb30cd1e2a6d769efa26cf31e9373c
     projectkey: sonarpr_test_t1
+    branchAnalysis: true
   when:
     branch:
       - main
       - master
+      - feature/*
     event:
       exclude:
       - pull_request
