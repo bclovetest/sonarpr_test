@@ -21,7 +21,7 @@ steps:
   image: bcyangguang/tmp-drone-test
   settings:
     sonar_host:  http://43.130.201.130:9000/
-    sonar_token: 734e9d36e9c123f13df0de17c3065705784d15d0
+    sonar_token: 23a5488d63bb30cd1e2a6d769efa26cf31e9373c
     projectkey: sonarpr_test_t1
     pullRequestAnalysis: true
   when:
@@ -32,7 +32,7 @@ steps:
   image: bcyangguang/tmp-drone-test
   settings:
     sonar_host:  http://43.130.201.130:9000/
-    sonar_token: 734e9d36e9c123f13df0de17c3065705784d15d0
+    sonar_token: 23a5488d63bb30cd1e2a6d769efa26cf31e9373c
     projectkey: sonarpr_test_t1
   when:
     branch:
