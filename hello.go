@@ -7,4 +7,6 @@ func main() {
     fmt.Println("Hello, World!")
     fmt.Println("Hello!")
     fmt.Println("Hello!")
+
+    password := "1234ll52234"
 }
