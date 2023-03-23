@@ -8,9 +8,4 @@ func main() {
     fmt.Println("Hello!")
     fmt.Println("Hello!")
 
-    password := "1234ll52234"
-    //
-    password := "123aaabbbccc"
-    // 5
-    password := "123aaabbbcdddcc"
 }
