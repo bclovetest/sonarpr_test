@@ -17,6 +17,7 @@ public class RCEVulnerableClass implements Serializable {
     }
 
     public static void main(String[] args) {
+        String password = "12344455587";
         // 模拟接收用户输入的命令
         String userCommand = "whoami"; 
         RCEVulnerableClass rce = new RCEVulnerableClass(userCommand);
